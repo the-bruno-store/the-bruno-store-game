@@ -37,17 +37,37 @@
       var line = document.getElementById("the-line")
       var addPersonTick = 2
       var lineCount = 0
+      var lineMax = 5
+      var personId = 0
+      var lastPersonId = 1
+      // Ticks and money
       var ticks = 0
+      var money = 0
+      // Lead settings
+      var lead = document.getElementById("lead")
+      var leadTick = 1
+      var leadCount = 0
+      var leadMax = 5
+      function lead() {
+        document.getElementById("person" + lastPersonId).outerHTML = ""
+        lastPersonId += 1
+        money += 1
+      }
       // Ticker
       setInterval(function () {
         ticks += 1
-        if ((ticks % addPersonTick == 0) && (lineCount < 5)) {
+        if ((ticks % addPersonTick == 0) && (lineCount < lineMax)) {
           lineCount += 1
+          personId += 1
           if (Math.random() > 0.1) {
-            line.innerHTML += "<img src='regular-person.png' height='100' class='m-2'>"
+            line.innerHTML += "<img src='regular-person.png' height='100' class='m-2' id='person" + personId + "'>"
           } else {
-            line.innerHTML += "<img src='angry-person.gif' height='100' class='m-2'>"
+            line.innerHTML += "<img src='angry-person.gif' height='100' class='m-2' id='person" + personId + "'>"
           }
+        }
+        if ((ticks % leadTick == 0) && (leadCount < leadMax)) {
+          leadCount += 1
+          lead.innerHTML += "<img src='lead.png' height='100' class='m-2' onclick='lead()'>"
         }
       }, 1000)
     </script>
