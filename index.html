@@ -69,7 +69,7 @@
         }
         if ((ticks % leadTick == 0) && (leadCount < leadMax)) {
           leadCount += 1
-          lead.innerHTML += "<img src='lead.png' height='100' class='m-2' onclick='lead()'>"
+          lead.innerHTML += "<button class='btn btn-light' onclick='lead()'><img src='lead.png' height='100'></button>"
         }
       }, 1000)
     </script>
