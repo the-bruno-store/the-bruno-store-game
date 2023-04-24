@@ -49,7 +49,8 @@
       var leadCount = 0
       var leadMax = 5
       function lead() {
-        document.getElementById("person" + lastPersonId).outerHTML = ""
+        document.getElementById("person" + lastPersonId).remove()
+        lineCount -= 1
         lastPersonId += 1
         money += 1
       }
