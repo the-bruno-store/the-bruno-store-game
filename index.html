@@ -13,9 +13,9 @@
         <div class="col-9 col-md-8">
           <div class="card" style="">
             <div class="card-body">
-              <h5 class="card-title">People</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Where impatient people wait.</h6>
-              <div id="the-line"></div>
+              <h5 class="card-title">Worker</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Not very efficient. Produces one package every five seconds.</h6>
+              <div id="workers"></div>
             </div>
           </div>
         </div>
@@ -35,17 +35,17 @@
     </div>
     <script>
       // Line settings
-      var line = document.getElementById("the-line")
+      /*var line = document.getElementById("the-line")
       var addPersonTick = 2
       var lineCount = 0
       var lineMax = 5
       var personId = 0
-      var lastPersonId = 1
+      var lastPersonId = 1*/
       // Ticks and money
       var ticks = 0
       var money = 0
       // Lead settings
-      var lead = document.getElementById("lead")
+      /*var lead = document.getElementById("lead")
       var leadTick = 1
       var leadCount = 0
       var leadMax = 5
@@ -54,10 +54,11 @@
         lineCount -= 1
         lastPersonId += 1
         money += 1
-      }
+      }*/
       // Ticker
       setInterval(function () {
         ticks += 1
+        /*
         if ((ticks % addPersonTick == 0) && (lineCount < lineMax)) {
           lineCount += 1
           personId += 1
@@ -71,6 +72,7 @@
           leadCount += 1
           lead.innerHTML += "<button class='btn btn-light' onclick='lead()'><img src='lead.png' height='100'></button>"
         }
+        */
       }, 1000)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
