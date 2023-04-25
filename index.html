@@ -50,7 +50,7 @@
       var leadCount = 0
       var leadMax = 5
       function lead() {
-        document.getElementById("person" + lastPersonId).remove()
+        document.querySelector("img#person").remove()
         lineCount -= 1
         lastPersonId += 1
         money += 1
@@ -62,9 +62,9 @@
           lineCount += 1
           personId += 1
           if (Math.random() > 0.1) {
-            line.innerHTML += "<img src='regular-person.png' height='100' class='m-2' id='person" + personId + "'>"
+            line.innerHTML += "<img src='regular-person.png' height='100' class='m-2' id='person'>"
           } else {
-            line.innerHTML += "<img src='angry-person.gif' height='100' class='m-2' id='person" + personId + "'>"
+            line.innerHTML += "<img src='angry-person.gif' height='100' class='m-2' id='person'>"
           }
         }
         if ((ticks % leadTick == 0) && (leadCount < leadMax)) {
