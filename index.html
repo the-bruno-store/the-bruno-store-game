@@ -37,7 +37,7 @@
           <div class="card" style="">
             <div class="card-body">
               <h5 class="card-title">ScanBot</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Flashing lights! Wide laser beam! One packages per second! Wow!</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Flashing lights! Wide laser beam! One package per second! Wow!</h6>
               <div id="scanbot"></div>
             </div>
           </div>
@@ -163,6 +163,7 @@
         money += scanbots
         if (whiteboard && ticks % 30 == 0) {
           workers += 1
+          workerThingie.innerHTML += "<img src='store-worker.gif' height='100'>"
         }
       }, 1000)
     </script>
