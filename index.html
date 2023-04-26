@@ -8,9 +8,23 @@
     <link href="https://the-bruno-store.github.io/favicon.ico" rel="icon" type="image/x-icon">
   </head>
   <body>
-    <div class="container">
+    <div class="sticky-top">
+      <p>Money: <span id="$$$"></span></p>
+    </div>
+    <div class="container-fluid">
       <div class="row">
         <div class="col-9 col-md-8">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-3 col-4-md"></div>
+              <div class="col-6 col-4-md">
+                <button class="btn" onclick="money += 1; moneyThingie.innerHTML = money"> 
+                  <img src="IMG_2170.jpeg">
+                </button>
+              </div>
+              <div class="col-3 col-4-md"></div>
+            </div>
+          </div>
           <div class="card" style="">
             <div class="card-body">
               <h5 class="card-title">Worker</h5>
@@ -44,6 +58,7 @@
       // Ticks and money
       var ticks = 0
       var money = 0
+      var moneyThingie = document.getElementById("$$$")
       // Lead settings
       /*var lead = document.getElementById("lead")
       var leadTick = 1
@@ -73,6 +88,7 @@
           lead.innerHTML += "<button class='btn btn-light' onclick='lead()'><img src='lead.png' height='100'></button>"
         }
         */
+        moneyThingie.innerHTML = money
       }, 1000)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
