@@ -50,6 +50,7 @@
               <p>10 packages</p>
               <div class="card" style="">
                 <button class="btn">
+                  <img src="regen-bar.gif" height="100" style="display: block;">
                   <h5 class="card-title">Regenerating Chocolate Bar</h5>
                   <p class="lead">Workers work twice as fast.</p>
                   <p id="owned">5 packages</p>
@@ -89,13 +90,14 @@
         if (money > 9) {
           money -= 10
           workers += 1
-          workerThingie.innerHTML += "<img src='final-worker.gif' height='100'>"
+          workerThingie.innerHTML += "<img src='store-worker.gif' height='100'>"
         }
       }
       function buyRegenBar() {
         if (money > 4 && ownsBar != 1) {
           ownsBar = 1
           money -= 5
+          barThingie.innerHTML += "<img src='regen-bar.gif' height='100'>"
         }
       }
       // ScanBots
