@@ -37,7 +37,7 @@
           <div class="card" style="">
             <div class="card-body">
               <h5 class="card-title">ScanBot</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Flashing lights! Wide laser beam! Three packages every second! Wow!</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Flashing lights! Wide laser beam! One packages per second! Wow!</h6>
               <div id="scanbot"></div>
             </div>
           </div>
@@ -56,15 +56,23 @@
                   <p id="owned">5 packages</p>
                 </button>
               </div>
+              <div class="card" style="">
+                <button class="btn" onclick="buyBoard()">
+                  <img src="whiteboard.gif" height="100" style="display: block;">
+                  <h5 class="card-title">Whiteboard for Education</h5>
+                  <p class="lead">Workers invite another worker every twenty seconds.</p>
+                  <p id="owned-4821">105 packages</p>
+                </button>
+              </div>
             </button>
           
-          <div class="card" style="">
-            <button class="btn" onclick="buyScanBot()">
-              <img src="scanbot.gif" height="100" style="display: block;">
-              <h5 class="card-title">ScanBot</h5>
-              <p>55 packages</p>
-            </button>
-          </div>
+            <div class="card" style="">
+              <button class="btn" onclick="buyScanBot()">
+                <img src="scanbot.gif" height="100" style="display: block;">
+                <h5 class="card-title">ScanBot</h5>
+                <p>40 packages</p>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -84,8 +92,10 @@
       // Workers
       var workers = 0
       var ownsBar = 0
+      var whiteboard = false
       var barThingie = document.getElementById("owned")
       var workerThingie = document.getElementById("workers")
+      var eduThingie = document.getElementById("owned-4821")
       function buyWorker() {
         if (money > 9) {
           money -= 10
@@ -100,12 +110,17 @@
           barThingie.innerHTML = "Owned"
         }
       }
+      function buyBoard() {
+        if (money > 104) {
+          whiteboard=true
+        }
+      }
       // ScanBots
       var scanbots = 0
       var scanbotThingie = document.getElementById("scanbot")
       function buyScanBot() {
-        if (money > 54) {
-          money -= 55
+        if (money > 39) {
+          money -= 40
           scanbots += 1
           scanbotThingie.innerHTML += "<img src='scanbot.gif' height='100'>"
         }
@@ -143,7 +158,10 @@
         if (ticks % 5 == 0) {
           money += workers * (ownsBar + 1)
         }
-        money += 3 * scanbots
+        money += scanbots
+        if (whiteboard && ticks % 30 == 0) {
+          workers += 1
+        }
       }, 1000)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
