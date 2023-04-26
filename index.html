@@ -45,7 +45,7 @@
         <div class="col-3 col-md-4">
           <div class="card" style="">
             <button class="btn" onclick="buyWorker()">
-              <img src="final-worker.gif" height="100" style="display: block;">
+              <img src="store-worker.gif" height="100" style="display: block;">
               <h5 class="card-title">Worker</h5>
               <p>10 packages</p>
               <div class="card" style="">
@@ -97,7 +97,7 @@
         if (money > 4 && ownsBar != 1) {
           ownsBar = 1
           money -= 5
-          barThingie.innerHTML += "<img src='regen-bar.gif' height='100'>"
+          barThingie.innerHTML = "Owned"
         }
       }
       // ScanBots
@@ -141,7 +141,7 @@
         */
         moneyThingie.innerHTML = money
         if (ticks % 5 == 0) {
-          money += workers
+          money += workers * (ownsBar + 1)
         }
         money += 3 * scanbots
       }, 1000)
