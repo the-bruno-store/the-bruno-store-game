@@ -45,12 +45,21 @@
         <div class="col-3 col-md-4">
           <div class="card" style="">
             <button class="btn" onclick="buyWorker()">
+              <img src="final-worker.gif" height="100" style="display: block;">
               <h5 class="card-title">Worker</h5>
               <p>10 packages</p>
+              <div class="card" style="">
+                <button class="btn">
+                  <h5 class="card-title">Regenerating Chocolate Bar</h5>
+                  <p class="lead">Workers work twice as fast.</p>
+                  <p id="owned">5 packages</p>
+                </button>
+              </div>
             </button>
           </div>
           <div class="card" style="">
             <button class="btn" onclick="buyScanBot()">
+              <img src="scanbot.gif" height="100" style="display: block;">
               <h5 class="card-title">ScanBot</h5>
               <p>55 packages</p>
             </button>
@@ -73,12 +82,20 @@
       var moneyThingie = document.getElementById("$$$")
       // Workers
       var workers = 0
+      var ownsBar = 0
+      var barThingie = document.getElementById("owned")
       var workerThingie = document.getElementById("workers")
       function buyWorker() {
         if (money > 9) {
           money -= 10
           workers += 1
           workerThingie.innerHTML += "<img src='final-worker.gif' height='100'>"
+        }
+      }
+      function buyRegenBar() {
+        if (money > 4 && ownsBar != 1) {
+          ownsBar = 1
+          money -= 5
         }
       }
       // ScanBots
