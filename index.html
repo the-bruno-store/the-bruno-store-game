@@ -60,8 +60,8 @@
                 <button class="btn" onclick="buyBoard()">
                   <img src="whiteboard.gif" height="100" style="display: block;">
                   <h5 class="card-title">Whiteboard for Education</h5>
-                  <p class="lead">Workers invite another worker every twenty seconds.</p>
-                  <p id="owned-4821">105 packages</p>
+                  <p class="lead">Workers invite another worker every thirty seconds.</p>
+                  <p id="owned-4821">95 packages</p>
                 </button>
               </div>
             </button>
@@ -111,8 +111,10 @@
         }
       }
       function buyBoard() {
-        if (money > 104) {
-          whiteboard=true
+        if (money > 94) {
+          money -= 95
+          whiteboard = true
+          eduThingie.innerHTML = "Owned"
         }
       }
       // ScanBots
