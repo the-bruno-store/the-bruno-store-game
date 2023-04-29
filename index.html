@@ -56,14 +56,6 @@
                   <p id="owned">5 packages</p>
                 </button>
               </div>
-              <div class="card" style="">
-                <button class="btn" onclick="buyBoard()">
-                  <img src="whiteboard.gif" height="100" style="display: block;">
-                  <h5 class="card-title">Whiteboard for Education</h5>
-                  <p class="lead">Workers invite another worker every thirty seconds.</p>
-                  <p id="owned-4821">95 packages</p>
-                </button>
-              </div>
             </button>
           
             <div class="card" style="">
@@ -92,10 +84,10 @@
       // Workers
       var workers = 0
       var ownsBar = 0
-      var whiteboard = false
+      //var whiteboard = false
       var barThingie = document.getElementById("owned")
       var workerThingie = document.getElementById("workers")
-      var eduThingie = document.getElementById("owned-4821")
+      //var eduThingie = document.getElementById("owned-4821")
       function buyWorker() {
         if (money > 9) {
           money -= 10
@@ -110,13 +102,13 @@
           barThingie.innerHTML = "Owned"
         }
       }
-      function buyBoard() {
+      /*function buyBoard() {
         if (money > 94) {
           money -= 95
           whiteboard = true
           eduThingie.innerHTML = "Owned"
         }
-      }
+      }*/
       // ScanBots
       var scanbots = 0
       var scanbotThingie = document.getElementById("scanbot")
