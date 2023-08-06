@@ -93,7 +93,7 @@
       var workers = parseInt(localStorage.workers) || 0
       var workerThingie = document.getElementById("workers")
       // Recover all data
-      for (let i = 0; i > workers; i++) {
+      for (let i = 0; i < workers; i++) {
         workerThingie.innerHTML += "<img src='store-worker.gif' height='100'>"
       }
       var ownsBar = 0
