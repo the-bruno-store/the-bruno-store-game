@@ -90,6 +90,14 @@
                 <h5 class="card-title">Production Line</h5>
                 <p>100 packages</p>
               </button>
+              <div class="card" style="">
+                <button class="btn" onclick="buyLuckScanBot()">
+                  <img src="luck-scantron.gif" height="100" style="display: block;">
+                  <h5 class="card-title">Luck ScanBot</h5>
+                  <p class="lead">Powered by Ireland's finest thousand-leaf clovers, it will double the value of packages that go through its beam of luck.</p>
+                  <p><span id="lbot-owned">500 packages</span></p>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -156,11 +164,20 @@
       // Production lines
       var productionLines = parseInt(localStorage.productionLines) || 0
       var lineThingie = document.getElementById("proline")
+      var luckBotThingie = document.getElementById("lbot-owned")
+      var ownsLBot = 0
       function buyProductionLine() {
         if (money > 99) {
           money -= 40
           productionLines += 1
           lineThingie.innerHTML += '<img src="production-line.gif" height="100">'
+        }
+      }
+      function buyLuckScanBot() {
+        if (money > 499 && ownsLBot != 1) {
+          money -= 500
+          ownsLBot = 1
+          luckBotThingie.innerHTML = "Owned"
         }
       }
       // Recover production line data
@@ -190,7 +207,7 @@
           money += workers * (ownsBar + 1) * (road + 1)
         }
         money += scanbots
-        money += productionLines * 3
+        money += productionLines * 3 * (ownsLBot + 1)
         localStorage.money = money
         localStorage.workers = workers
         localStorage.scanbots = scanbots
