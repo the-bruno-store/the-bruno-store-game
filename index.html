@@ -100,6 +100,15 @@
                 </button>
               </div>
             </div>
+
+            <div class="card" style="">
+              <button class="btn" onclick="buyStore()">
+                <img src="first-store.png" height="100" style="display: block;">
+                <h5 class="card-title">YOUR FIRST STORE!</h5>
+                <p>1000 packages</p>
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
@@ -185,6 +194,14 @@
       for (let i = 0; i < productionLines; i++) {
         lineThingie.innerHTML += "<img src='production-line.gif' height='100'>"
       }
+      // A BIG MILESTONE: YOUR FIRST STORE!
+      var ownsStore = parseInt(localStorage.ownsStore) || 0
+      function buyStore() {
+        if (money > 999 && ownsStore != 1) {
+          money -= 1000
+          ownsStore = false
+        }
+      }
       // Ticker
       setInterval(function () {
         ticks += 1
@@ -213,6 +230,7 @@
         localStorage.workers = workers
         localStorage.scanbots = scanbots
         localStorage.productionLines = productionLines
+        localStorage.ownsStore = ownsStore
       }, 1000)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
