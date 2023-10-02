@@ -133,8 +133,8 @@
       for (let i = 0; i < workers; i++) {
         workerThingie.innerHTML += "<img src='store-worker.gif' height='100'>"
       }
-      var ownsBar = 0
-      var road = 0
+      var ownsBar = localStorage.ownsBar || 0
+      var road = localStorage.road || 0
       var barThingie = document.getElementById("owned")
       var roadThingie = document.getElementById("road-owned")
       function buyWorker() {
@@ -176,7 +176,7 @@
       var productionLines = parseInt(localStorage.productionLines) || 0
       var lineThingie = document.getElementById("proline")
       var luckBotThingie = document.getElementById("lbot-owned")
-      var ownsLBot = 0
+      var ownsLBot = localStorage.ownsLBot || 0
       function buyProductionLine() {
         if (money > 99) {
           money -= 40
@@ -232,6 +232,9 @@
         localStorage.scanbots = scanbots
         localStorage.productionLines = productionLines
         localStorage.ownsStore = ownsStore
+        localStorage.ownsBar = ownsBar
+        localStorage.road = road
+        localStorage.ownsLBot = ownsLBot
       }, 1000)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
