@@ -16,6 +16,26 @@
         p.innerHTML = "You owned your first store."
         setTimeout(function() {
           p.innerHTML = "Now get on with the game."
+          setTimeout(function() {
+            // Create the suspense!
+            p.innerHTML = "Unless..."
+            setTimeout(function() {
+              p.innerHTML = "Unless you just..."
+              setTimeout(function() {
+                p.innerHTML = "Unless you just clicked on the Button one thousand times."
+                setTimeout(function() {
+                  p.innerHTML = "Sigh."
+                  setTimeout(function() {
+                    p.innerHTML = "Sigh. I can't give you a refund..."
+                    setTimeout(function() {
+                      p.innerHTML = "Sigh. I can't give you a refund, unless you wait to the Very End."
+                      // Finish here.
+                    }, 2000)
+                  }, 2000)
+                }, 2000)
+              }, 2000)
+            }, 2000)
+          }, 2000)
         }, 2000)
       }, 2000)
     </script>
