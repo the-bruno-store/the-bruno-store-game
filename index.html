@@ -137,6 +137,12 @@
       var road = localStorage.road || 0
       var barThingie = document.getElementById("owned")
       var roadThingie = document.getElementById("road-owned")
+      if (ownsBar == 1) {
+        barThingie.innerHTML = "Owned"
+      }
+      if (road == 1) {
+        roadThingie.innerHTML = "Owned"
+      }
       function buyWorker() {
         if (money > 9) {
           money -= 10
@@ -177,6 +183,9 @@
       var lineThingie = document.getElementById("proline")
       var luckBotThingie = document.getElementById("lbot-owned")
       var ownsLBot = localStorage.ownsLBot || 0
+      if (ownsLBot == 1) {
+        luckBotThingie.innerHTML = "Owned"
+      }
       function buyProductionLine() {
         if (money > 99) {
           money -= 40
