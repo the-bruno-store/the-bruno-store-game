@@ -31,11 +31,19 @@
         await write("This is like an award; this isn't a real store.")
         await write("Now get on with the game.")
         await write("I was not thinking of it going like this.", "YOU")
-        window.open("first-store.html")
-        await write("[CONTENT OPENED IN NEW TAB]", "YOU")
-        await write("Your computer is going to crash.")
-        await write("Unless you can close the tab in time.")
-        await write("I still got plenty of time.", "YOU")
+        var handler = window.open("first-store.html")
+        if (handler) {
+          await write("[CONTENT OPENED IN NEW TAB]", "YOU")
+          await write("Your computer is going to crash.")
+          await write("Unless you can close the tab in time.")
+          await write("I still got plenty of time.", "YOU")
+        } else {
+          await write("[CONTENT BLOCKED]", "YOU")
+          await write("This isn't working?", "YOU")
+          while (true) {
+            await write("Please turn on pop-ups.", "YOU")
+          }
+        }
       }
       main()
     </script>
