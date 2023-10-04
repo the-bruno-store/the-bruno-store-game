@@ -13,13 +13,14 @@
     <script defer>
       var p = document.querySelector("p")
       async function sleep(ms) {
-        return new Promise(() => setTimeout(resolve, ms))
+        return new Promise(resolve => setTimeout(resolve, ms))
       }
       async function write(text, author) {
         p.innerHTML += `${author ?? "BRUNO"}: ` + text + "<br>"
         await sleep(2000)
       }
       async function main() {
+        await sleep(2000)
         await write("You bought your first store.")
         await write("That was great and all;")
         await write("now get on with the game.")
