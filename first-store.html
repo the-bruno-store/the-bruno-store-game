@@ -9,7 +9,7 @@
     <link href="manifest.json" rel="manifest">
   </head>
   <body>
-    <p>Congratulations.<br></p>
+    <p>BRUNO: Congratulations.<br></p>
     <script defer>
       var p = document.querySelector("p")
       async function sleep(ms) {
@@ -30,6 +30,12 @@
         await write("How can it not?", "YOU")
         await write("This is like an award; this isn't a real store.")
         await write("Now get on with the game.")
+        await write("I was not thinking of it going like this.", "YOU")
+        window.open("first-store.html")
+        await write("[CONTENT OPENED IN NEW TAB]", "YOU")
+        await write("Your computer is going to crash.")
+        await write("Unless you can close the tab in time.")
+        await write("I still got plenty of time.", "YOU")
       }
       main()
     </script>
