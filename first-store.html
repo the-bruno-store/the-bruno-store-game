@@ -35,13 +35,18 @@
         if (handler) {
           await write("[CONTENT OPENED IN NEW TAB]", "YOU")
           await write("Your computer is going to crash.")
-          await write("Unless you can close the tab in time.")
+          await write("Unless you can close the next tab in time.")
           await write("I still got plenty of time.", "YOU")
+          await write("You sure?")
+          await write("Yes.", "YOU")
+          await write("Okay then, this isn't my problem.")
+          await write("Good luck with the monstrosity!")
         } else {
           await write("[CONTENT BLOCKED]", "YOU")
           await write("This isn't working?", "YOU")
           while (true) {
             await write("Please turn on pop-ups.", "YOU")
+            await write("You are causing a monstrosity to happen!")
           }
         }
       }
