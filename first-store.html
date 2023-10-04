@@ -15,20 +15,20 @@
       async function sleep(ms) {
         return new Promise(() => setTimeout(resolve, ms))
       }
-      function write(text, author) {
-        p.innerHTML += `${author ?? "BRUNO"}:` + text + "<br>"
-        sleep(2000)
+      async function write(text, author) {
+        p.innerHTML += `${author ?? "BRUNO"}: ` + text + "<br>"
+        await sleep(2000)
       }
       async function main() {
-        write("You bought your first store.")
-        write("That was great and all;")
-        write("now get on with the game.")
-        write("But I want to work on my store.", "YOU")
-        write("Well, what did you expect?")
-        write("How can a store only cost $1,000?")
-        write("How can it not?", "YOU")
-        write("This is like an award; this isn't a real store.")
-        write("Now get on with the game.")
+        await write("You bought your first store.")
+        await write("That was great and all;")
+        await write("now get on with the game.")
+        await write("But I want to work on my store.", "YOU")
+        await write("Well, what did you expect?")
+        await write("How can a store only cost $1,000?")
+        await write("How can it not?", "YOU")
+        await write("This is like an award; this isn't a real store.")
+        await write("Now get on with the game.")
       }
       main()
     </script>
